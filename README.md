@@ -1,1 +1,1 @@
-# SalesForc-Training
+# SalesForce-Training
