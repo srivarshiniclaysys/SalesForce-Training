@@ -1,0 +1,29 @@
+p[data-id].strikethrough { 
+    text-decoration: line-through;
+    color:  rgb(128, 128, 235);
+}
+.task-label {
+    color: rgb(128, 128, 235);
+}
+.task-label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f7f7f7;
+    opacity: 0.8;
+  }
+  .box span {
+    margin-bottom: 0;
+  }
+  
+  .box p {
+    margin-top: 0;
+  }
+
+  .head {
+    display: flex;
+    justify-content: flex-end;
+  }
