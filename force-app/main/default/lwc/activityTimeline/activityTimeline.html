@@ -1,0 +1,104 @@
+<!-- This Lightning Web Component (LWC) is used to display a checklist item timeline 
+in a specific order on the Loan Review Record page. -->
+<template>
+   <lightning-card>
+      <div style="display: flex; justify-content: flex-end;" class="head">
+         <button class="slds-button" onclick={refreshTimeline} style="margin-right: 10px;">Refresh</button>
+         <button class="slds-button" onclick={completeAllTasks} style="margin-right: 5px;">Complete All Tasks</button>
+      </div>
+      <div class="slds-col">
+         <h3 class="slds-section__title slds-theme_shade" style="margin: 10px 0px;">
+            <span class="slds-truncate slds-p-horizontal_small" title="Section Title">
+               <b>Upcoming Tasks</b>
+            </span>
+         </h3>
+      </div>
+      <template if:true={showNoActivitiesMessage}>
+         <p style="text-align: center;padding:10px 0px;">{noActivitiesMessage}</p>
+      </template>
+      <template if:true={hasActivities}>
+         <ul class="slds-timeline">
+            <template for:each={activities.data} for:item="activity">
+               <li key={activity.Id}>
+                  <div class="slds-timeline__item_expandable slds-timeline__item_task">
+                     <span class="slds-assistive-text">task</span>
+                     <div class="slds-media">
+                        <div class="slds-media__figure">
+                           <lightning-icon icon-name="utility:right" size="small" onclick={handleArrowClick}
+                              data-arrow-direction="right"></lightning-icon>
+                           <div class="slds-icon_container slds-icon-standard-task " title="task">
+                              <lightning-icon icon-name="standard:task" size="small"></lightning-icon>
+                           </div>
+                        </div>
+                        <div class="slds-media__body">
+                           <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                              <div
+                                 class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                                 <div class="slds-checkbox">
+                                    <input type="checkbox" name="options" id={activity.Id} value={activity.Id}
+                                       onchange={handleCheckboxClick} />
+                                    <label class="slds-checkbox__label" for={activity.Id}>
+                                       <span class="slds-checkbox_faux"></span>
+                                       <span
+                                          class="slds-form-element__label slds-assistive-text">{activity.Subject}</span>
+                                    </label>
+                                 </div>
+                                 <h3 class="slds-truncate" title={activity.Subject}>
+                                    <p data-id={activity.Id} onclick={showTask} class="task-label">{activity.Subject}
+                                    </p>
+                                 </h3>
+                              </div>
+                           </div>
+                           <div class="box" style="display: none;">
+                              <span class="slds-text-title">Description</span>
+                              <p class="slds-p-top_x-small">{activity.Description}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+            </template>
+         </ul>
+      </template>
+      <template if:true={hasCompletedTasks}>
+         <h3 class="slds-section__title slds-theme_shade" style="margin: 10px 0px;">
+            <span class="slds-truncate slds-p-horizontal_small" title="Section Title">
+               <b>Completed Tasks</b>
+            </span>
+         </h3>
+         <ul class="slds-timeline">
+            <template for:each={completedTasks.data} for:item="completedTasks">
+               <li key={completedTasks.Id}>
+                  <div class="slds-timeline__item_expandable slds-timeline__item_task">
+                     <span class="slds-assistive-text">task</span>
+                     <div class="slds-media">
+                        <div class="slds-media__figure">
+                           <lightning-icon icon-name="utility:right" size="small" onclick={handleArrowClick}
+                              data-arrow-direction="right"></lightning-icon>
+                           <div class="slds-icon_container slds-icon-standard-task " title="task">
+                              <lightning-icon icon-name="standard:task" size="small"></lightning-icon>
+                           </div>
+                        </div>
+                        <div class="slds-media__body">
+                           <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                              <div
+                                 class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                                 <h3 class="slds-truncate" title={completedTasks.Subject}>
+                                    <p data-id={completedTasks.Id} onclick={showTask} class="task-label">
+                                       {completedTasks.Subject}</p>
+                                 </h3>
+                              </div>
+                           </div>
+                           <div class="box" style="display:none;">
+                              <span class="slds-text-title">Description</span>
+                              <p class="slds-p-top_x-small">{completedTasks.Description}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+            </template>
+         </ul>
+      </template>
+   </lightning-card>
+</template>
