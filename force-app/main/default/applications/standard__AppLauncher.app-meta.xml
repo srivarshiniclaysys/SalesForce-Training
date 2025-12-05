@@ -9,5 +9,4 @@
     <tabs>standard-AppLauncher</tabs>
     <tabs>project__c</tabs>
     <tabs>Project_Task__c</tabs>
-    <tabs>Checklist_Order__c</tabs>
 </CustomApplication>

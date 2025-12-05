@@ -33,10 +33,6 @@
                 <behavior>Edit</behavior>
                 <field>WhatId</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Checklist_Order_Number__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

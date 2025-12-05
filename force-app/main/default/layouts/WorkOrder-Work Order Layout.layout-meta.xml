@@ -163,9 +163,6 @@
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
-        <relatedList>RelatedContentNoteList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>Name</fields>
         <fields>Subject</fields>
         <fields>Account</fields>

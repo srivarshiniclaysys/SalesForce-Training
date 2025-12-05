@@ -13,12 +13,8 @@
     <tabs>standard-CmsExperiences</tabs>
     <tabs>project__c</tabs>
     <tabs>Project_Task__c</tabs>
-    <tabs>Checklist_Order__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
-        <mappings>
-            <tab>Checklist_Order__c</tab>
-        </mappings>
         <mappings>
             <tab>Project_Task__c</tab>
         </mappings>
