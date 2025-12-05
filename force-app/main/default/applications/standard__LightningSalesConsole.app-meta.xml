@@ -16,6 +16,7 @@
     <tabs>standard-Campaign</tabs>
     <tabs>standard-Task</tabs>
     <tabs>standard-Event</tabs>
+    <tabs>standard-ContentNote</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-Feed</tabs>
@@ -23,9 +24,13 @@
     <tabs>standard-File</tabs>
     <tabs>project__c</tabs>
     <tabs>Project_Task__c</tabs>
+    <tabs>Checklist_Order__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Checklist_Order__c</tab>
+        </mappings>
         <mappings>
             <tab>Project_Task__c</tab>
         </mappings>
@@ -43,6 +48,9 @@
         </mappings>
         <mappings>
             <tab>standard-Contact</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-ContentNote</tab>
         </mappings>
         <mappings>
             <tab>standard-Dashboard</tab>

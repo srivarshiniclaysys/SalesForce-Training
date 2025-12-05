@@ -4,6 +4,17 @@
     <active>true</active>
     <label>Internal Project</label>
     <picklistValues>
+        <picklist>Assigned_Exec__c</picklist>
+        <values>
+            <fullName>User 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User 2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Status__c</picklist>
         <values>
             <fullName>In-Progress</fullName>
